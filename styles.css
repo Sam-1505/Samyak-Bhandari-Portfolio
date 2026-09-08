@@ -9,7 +9,7 @@
   --teal-dark: #005e5b;
   --coral: #e65c45;
   --yellow: #f4b84a;
-  --phthalo green: #123524;
+  --phthalo-green: #123524;
   --shadow: 0 20px 55px rgba(17, 24, 32, 0.14);
 }
 
@@ -315,7 +315,7 @@ h3 {
 }
 
 .tab.is-active {
-  background: var(--white);
+  background: var(--phthalo-green);
   color: var(--charcoal);
 }
 
@@ -491,7 +491,7 @@ h3 {
   gap: 28px;
   padding: 76px clamp(20px, 5vw, 72px);
   color: var(--white);
-  background: var(--teal-dark);
+  background: var(--phthalo-green);
 }
 
 .contact-section h2 {
