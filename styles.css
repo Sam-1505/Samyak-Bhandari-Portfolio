@@ -316,7 +316,7 @@ h3 {
 
 .tab.is-active {
   background: var(--phthalo-green);
-  color: var(--charcoal);
+  color: var(--white);
 }
 
 .focus-panel {
