@@ -315,7 +315,7 @@ h3 {
 }
 
 .tab.is-active {
-  background: var(--phthalo-green);
+  background: var(--white);
   color: var(--white);
 }
 
