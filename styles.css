@@ -340,6 +340,19 @@ h3 {
   line-height: 1.08;
 }
 
+/* Keep the Focus Areas section legible on its light background. */
+.role-band,
+.role-band .section-heading h2,
+.role-band .focus-copy h3,
+.role-band .focus-copy p,
+.role-band .tab {
+  color: #123524;
+}
+
+.role-band .tab.is-active {
+  color: #123524;
+}
+
 .experience-band {
   background: var(--white);
 }
