@@ -203,7 +203,7 @@ h3 {
 
 .button.primary {
   background: var(--yellow);
-  color: var(--charcoal);
+  color: var(--phthalo-green);
 }
 
 .button.secondary {
@@ -288,7 +288,7 @@ h3 {
   display: grid;
   grid-template-columns: minmax(240px, 0.8fr) minmax(320px, 1.2fr);
   gap: 32px;
-  background: var(--charcoal);
+  background: var(--phthalo-green);
   color: var(--white);
 }
 
@@ -316,7 +316,7 @@ h3 {
 
 .tab.is-active {
   background: var(--white);
-  color: var(--white);
+  color: var(--phthalo-green);
 }
 
 .focus-panel {
@@ -340,21 +340,106 @@ h3 {
   line-height: 1.08;
 }
 
-/* Keep the Focus Areas section legible on its light background. */
+/* Shared light theme, based on the Skills section. */
+:root {
+  --section-bg: #eef4f4;
+  --section-ink: #123524;
+  --section-card: #ffffff;
+  --section-border: #d7dee6;
+}
+
+.intro-band,
+.recent-work-band,
 .role-band,
+.experience-band,
+.skills-band,
+.credentials-band,
+.contact-section {
+  background: var(--section-bg);
+  color: var(--section-ink);
+}
+
+.intro-band h2,
+.recent-work-band h2,
+.role-band h2,
+.experience-band h2,
+.skills-band h2,
+.credentials-band h2,
+.contact-section h2 {
+  color: var(--section-ink);
+}
+
+.intro-band h3,
+.recent-work-band h3,
+.role-band h3,
+.experience-band h3,
+.skills-band h3,
+.credentials-band h3,
+.contact-section h3 {
+  color: var(--section-ink);
+}
+
+.metric-card,
+.credential-grid article,
+.timeline-item,
+.skill-grid span,
+.focus-panel {
+  background: var(--section-card);
+  border-color: var(--section-border);
+  color: var(--section-ink);
+}
+
+.metric-card,
+.credential-grid article {
+  box-shadow: 0 10px 30px rgba(17, 24, 32, 0.05);
+}
+
 .role-band .section-heading h2,
 .role-band .focus-copy h3,
 .role-band .focus-copy p,
 .role-band .tab {
-  color: #123524;
+  color: var(--section-ink);
+}
+
+.role-tabs {
+  border-color: var(--section-border);
+}
+
+.role-band .tab {
+  border: 1px solid var(--section-border);
+  background: var(--white);
 }
 
 .role-band .tab.is-active {
-  color: #123524;
+  border-color: var(--phthalo-green);
+  background: var(--phthalo-green);
+  color: var(--white);
+}
+
+.focus-panel {
+  border-left-color: var(--phthalo-green);
+}
+
+.focus-copy p {
+  color: var(--muted);
+}
+
+.recent-work-band .metric-card {
+  max-width: 760px;
+  min-height: 0;
+}
+
+.recent-work-band .button.primary {
+  background: var(--phthalo-green);
+  color: var(--white);
+}
+
+.recent-work-band .button.primary:hover {
+  background: var(--teal-dark);
 }
 
 .experience-band {
-  background: var(--white);
+  background: var(--section-bg);
 }
 
 .timeline {
@@ -367,7 +452,7 @@ h3 {
   border: 1px solid var(--line);
   border-radius: 8px;
   overflow: hidden;
-  background: var(--paper);
+  background: var(--section-card);
 }
 
 .timeline-trigger {
@@ -379,7 +464,7 @@ h3 {
   gap: 18px;
   border: 0;
   padding: 22px 24px;
-  color: var(--ink);
+  color: var(--section-ink);
   background: transparent;
   text-align: left;
   font: inherit;
@@ -403,7 +488,7 @@ h3 {
   width: 36px;
   height: 36px;
   border-radius: 8px;
-  background: var(--teal);
+  background: var(--phthalo-green);
   color: var(--white);
   font-weight: 800;
 }
@@ -433,7 +518,7 @@ h3 {
 }
 
 .skills-band {
-  background: #eef4f4;
+  background: var(--section-bg);
 }
 
 .filter-bar {
@@ -449,8 +534,8 @@ h3 {
 }
 
 .filter.is-active {
-  border-color: var(--teal);
-  background: var(--teal);
+  border-color: var(--phthalo-green);
+  background: var(--phthalo-green);
   color: var(--white);
 }
 
@@ -478,7 +563,7 @@ h3 {
 }
 
 .credentials-band {
-  background: var(--paper);
+  background: var(--section-bg);
 }
 
 .credential-grid {
@@ -490,8 +575,8 @@ h3 {
   grid-template-columns: minmax(280px, 1fr) minmax(260px, 0.8fr);
   gap: 28px;
   padding: 76px clamp(20px, 5vw, 72px);
-  color: var(--white);
-  background: var(--phthalo-green);
+  color: var(--section-ink);
+  background: var(--section-bg);
 }
 
 .contact-section h2 {
@@ -501,6 +586,29 @@ h3 {
 .contact-actions {
   align-content: center;
   justify-content: flex-end;
+}
+
+.contact-section .button.primary,
+.contact-section .button.secondary {
+  border: 1px solid var(--section-border);
+  background: var(--section-card);
+  color: var(--section-ink);
+}
+
+.contact-section .button.primary:hover,
+.contact-section .button.secondary:hover {
+  border-color: var(--phthalo-green);
+  background: var(--phthalo-green);
+  color: var(--white);
+}
+
+.contact-section p:not(.eyebrow) {
+  color: var(--muted);
+}
+
+/* Keep the image hero readable while using the shared green palette. */
+.hero .button.primary {
+  color: var(--phthalo-green);
 }
 
 @media (max-width: 920px) {
